@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "unfortunately",
+  "version": "${version}",
+  "name": "Unfortunately",
+  "description": "Fortunes and curses.",
+  "authors": [
+    "It's a Mystery"
+  ],
+  "license": "CC0-1.0",
+  "icon": "assets/unfortunately/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "someones.modfest.mod.unfortunately.Unfortunately"
+    ],
+    "client": [
+      "someones.modfest.mod.unfortunately.UnfortunatelyClient"
+    ]
+  },
+  "mixins": [
+    "unfortunately.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.9+build.190",
+    "fabric": "*",
+    "minecraft": "1.15.2"
+  }
+}

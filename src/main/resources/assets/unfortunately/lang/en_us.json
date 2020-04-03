@@ -1,0 +1,29 @@
+{
+  "entity.minecraft.villager.fortuneteller": "Fortune Teller",
+  
+  "block.unfortunately.crystal_ball": "Crystal Ball",
+  
+  "item.unfortunately.unread_fortune": "Unread Fortune",
+  "unfortunately.tooltip.read_fortune": "%s to find out what it says",
+  
+  "unfortunately.quality.debug": "DEBUG: quality - %s",
+  
+  "unfortunately.quality.terrible": "Terrible",
+  "unfortunately.quality.poor": "Poor",
+  "unfortunately.quality.bad": "Bad",
+  "unfortunately.quality.neutral": "Neutral",
+  "unfortunately.quality.good": "Good",
+  "unfortunately.quality.great": "Great",
+  "unfortunately.quality.amazing": "Amazing",
+
+  "unfortunately.timespan.debug": "DEBUG: timespan - %s",
+  
+  "unfortunately.timespan.shortly": "Shortly",
+  "unfortunately.timespan.near_future": "Near Future",
+  "unfortunately.timespan.far_future": "Far Future",
+  "unfortunately.timespan.distant_future": "Distant Future",
+
+  "unfortunately.fortune.debug": "DEBUG: fortune - %s",
+  
+  "unfortunately.command.clear.success": "Removed %s pending fortunes from %s players"
+}

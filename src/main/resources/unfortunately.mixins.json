@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "someones.modfest.mod.unfortunately.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "VillagerProfessionMixin",
+    "PointOfInterestTypeMixin",
+    "PlayerEntityMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
