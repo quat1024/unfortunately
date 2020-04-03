@@ -1,0 +1,96 @@
+{
+	"credit": "Made with Blockbench :)",
+	"parent": "block/block",
+	"textures": {
+		"ball": "unfortunately:block/crystal_ball/ball",
+		"top": "unfortunately:block/crystal_ball/top",
+		"bottom": "unfortunately:block/crystal_ball/bottom",
+		"post": "unfortunately:block/crystal_ball/post",
+		"sides": "unfortunately:block/crystal_ball/sides",
+		"particle": "#ball"
+	},
+	"elements": [
+		{
+			"name": "base",
+			"from": [2, 0, 2],
+			"to": [14, 2, 14],
+			"faces": {
+				"up": {"uv": [2, 2, 14, 14], "texture": "#top"},
+				"down": {"uv": [2, 2, 14, 14], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "side",
+			"from": [0, 0, 0],
+			"to": [2, 4, 16],
+			"faces": {
+				"north": {"uv": [14, 0, 16, 4], "texture": "#sides"},
+				"east": {"uv": [0, 1, 16, 5], "texture": "#sides"},
+				"south": {"uv": [0, 8, 2, 12], "texture": "#sides"},
+				"west": {"uv": [0, 12, 16, 16], "texture": "#sides"},
+				"up": {"uv": [0, 0, 2, 16], "texture": "#top"},
+				"down": {"uv": [0, 0, 2, 16], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "side",
+			"from": [14, 0, 0],
+			"to": [16, 4, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 2, 4], "texture": "#sides"},
+				"east": {"uv": [0, 4, 16, 8], "texture": "#sides"},
+				"south": {"uv": [14, 8, 16, 12], "texture": "#sides"},
+				"west": {"uv": [0, 1, 16, 5], "texture": "#sides"},
+				"up": {"uv": [14, 0, 16, 16], "texture": "#top"},
+				"down": {"uv": [14, 0, 16, 16], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "side",
+			"from": [2, 0, 0],
+			"to": [14, 4, 2],
+			"faces": {
+				"north": {"uv": [2, 0, 14, 4], "texture": "#sides"},
+				"south": {"uv": [2, 1, 14, 5], "texture": "#sides"},
+				"up": {"uv": [2, 0, 14, 2], "texture": "#top"},
+				"down": {"uv": [2, 14, 14, 16], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "side",
+			"from": [2, 0, 14],
+			"to": [14, 4, 16],
+			"faces": {
+				"north": {"uv": [2, 1, 14, 5], "texture": "#sides"},
+				"south": {"uv": [2, 8, 14, 12], "texture": "#sides"},
+				"up": {"uv": [2, 14, 14, 16], "texture": "#top"},
+				"down": {"uv": [2, 0, 14, 2], "texture": "#bottom"}
+			}
+		},
+		{
+			"name": "post",
+			"from": [6, 2, 6],
+			"to": [10, 5, 10],
+			"faces": {
+				"north": {"uv": [0, 0, 4, 3], "texture": "#post"},
+				"east": {"uv": [0, 0, 4, 3], "texture": "#post"},
+				"south": {"uv": [0, 0, 4, 3], "texture": "#post"},
+				"west": {"uv": [0, 0, 4, 3], "texture": "#post"},
+				"up": {"uv": [4, 0, 8, 4], "texture": "#post"}
+			}
+		},
+		{
+			"name": "crystal",
+			"from": [4, 5, 4],
+			"to": [12, 13, 12],
+			"faces": {
+				"north": {"uv": [0, 0, 8, 8], "texture": "#ball"},
+				"east": {"uv": [0, 0, 8, 8], "texture": "#ball"},
+				"south": {"uv": [0, 0, 8, 8], "texture": "#ball"},
+				"west": {"uv": [0, 0, 8, 8], "texture": "#ball"},
+				"up": {"uv": [0, 0, 8, 8], "texture": "#ball"},
+				"down": {"uv": [0, 0, 8, 8], "texture": "#ball"}
+			}
+		}
+	]
+}

@@ -65,7 +65,7 @@ public class FortuneTicketItem extends Item {
 		Fortune fortune = new Fortune(type, quality, world.getTimeOfDay() + timespan.pickTick(random));
 		((PlayerExt) user).getFortunes().add(fortune);
 		
-		stack.decrement(1);
+		stack.decrement(1); //TODO why is this not working? i still have the item after i click with it
 		
 		UFNetServer.openResultScreen(user, new LiteralText("you got " + FortuneRegistry.FORTUNE_TYPES.getId(type) + " timespan: " + timespan.toString()));
 		

@@ -3,8 +3,8 @@
   
   "block.unfortunately.crystal_ball": "Crystal Ball",
   
-  "item.unfortunately.unread_fortune": "Unread Fortune",
-  "unfortunately.tooltip.read_fortune": "%s to find out what it says",
+  "item.unfortunately.unread_fortune": "Fortune",
+  "unfortunately.tooltip.read_fortune": "%s to read.",
   
   "unfortunately.quality.debug": "DEBUG: quality - %s",
   
@@ -25,5 +25,5 @@
 
   "unfortunately.fortune.debug": "DEBUG: fortune - %s",
   
-  "unfortunately.command.clear.success": "Removed %s pending fortunes from %s players"
+  "unfortunately.command.clear.success": "Removed %s pending fortune(s) from %s player(s)"
 }
