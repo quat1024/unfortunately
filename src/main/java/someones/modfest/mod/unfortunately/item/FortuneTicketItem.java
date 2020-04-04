@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 import someones.modfest.mod.unfortunately.Unfortunately;
 import someones.modfest.mod.unfortunately.fortune.*;
 import someones.modfest.mod.unfortunately.net.UFNetServer;
-import someones.modfest.mod.unfortunately.util.PlayerExt;
+import someones.modfest.mod.unfortunately.junk.PlayerExt;
 
 import java.util.List;
 import java.util.Random;

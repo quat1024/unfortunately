@@ -11,13 +11,7 @@ public class DummyFortune extends FortuneType {
 	}
 	
 	@Override
-	public void pendingTick(PlayerEntity player, Fortune fortune, long timeRemaining) {
-		System.out.println("PENDING!!!!!!!!! time until active: " + timeRemaining);
-	}
-	
-	@Override
 	public void activeTick(PlayerEntity player, Fortune fortune) {
-		System.out.println("ACTIVE!!!!!!!!! now finishing!!!");
 		fortune.setFinished();
 	}
 }

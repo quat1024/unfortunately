@@ -19,6 +19,7 @@ public class UFBlocks {
 					.breakByTool(FabricToolTags.PICKAXES, 2)
 					.sounds(BlockSoundGroup.LANTERN) //todo futz with this
 					.strength(3.5f, 0f)
+					.nonOpaque()
 					.build()
 			)
 		);

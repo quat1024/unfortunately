@@ -16,6 +16,10 @@ public class QualityRange implements Predicate<FortuneQuality> {
 		return new QualityRange(low.getId(), high.getId());
 	}
 	
+	public static QualityRange diverge(FortuneQuality basis, int amount) {
+		return new QualityRange(basis.getId() - amount, basis.getId() + amount);
+	}
+	
 	private static QualityRange NEVER = new QualityRange(100, -100);
 	public static QualityRange never() {
 		return NEVER; //bigger than 100, smaller than -100

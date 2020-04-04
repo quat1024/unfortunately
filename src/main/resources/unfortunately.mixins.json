@@ -5,7 +5,8 @@
   "mixins": [
     "VillagerProfessionMixin",
     "PointOfInterestTypeMixin",
-    "PlayerEntityMixin"
+    "PlayerEntityMixin",
+    "ServerPlayerInteractionManagerMixin"
   ],
   "client": [
   ],

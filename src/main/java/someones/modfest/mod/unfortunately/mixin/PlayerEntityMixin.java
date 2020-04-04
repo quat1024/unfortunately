@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import someones.modfest.mod.unfortunately.Unfortunately;
 import someones.modfest.mod.unfortunately.fortune.Fortune;
-import someones.modfest.mod.unfortunately.util.PlayerExt;
+import someones.modfest.mod.unfortunately.junk.PlayerExt;
 
 import java.util.Set;
 import java.util.TreeSet;

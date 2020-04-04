@@ -39,6 +39,20 @@ public enum FortuneQuality {
 		}
 	}
 	
+	//Help me
+	public static FortuneQuality byString(String s) {
+		switch(s) {
+			case "terrible": return TERRIBLE;
+			case "poor": return POOR;
+			case "bad": return BAD;
+			case "neutral": return NEUTRAL;
+			case "good": return GOOD;
+			case "great": return GREAT;
+			case "amazing": return AMAZING;
+			default: return null;
+		}
+	}
+	
 	public FortuneQuality perturb(Random random) {
 		int newId = getId() + (random.nextBoolean() ? 1 : -1);
 		if(newId <= -4 || newId >= 4) return this;
