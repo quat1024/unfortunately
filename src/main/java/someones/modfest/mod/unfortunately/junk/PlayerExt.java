@@ -15,7 +15,7 @@ public interface PlayerExt {
 	static void addFortune(PlayerEntity player, FortuneType<?> type, FortuneQuality quality, long delay) {
 		Set<Fortune<?>> fortunes = ((PlayerExt) player).getFortunes();
 		
-		Fortune<?> f = new Fortune<>(type, quality, player.world.getTimeOfDay() + delay);
+		Fortune<?> f = new Fortune<>(type, quality, TimeHelper.getTime(player.world) + delay);
 		fortunes.add(f);
 		f.onAdded(player);
 	}

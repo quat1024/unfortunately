@@ -8,6 +8,10 @@
   
   "item.unfortunately.unread_fortune": "Fortune",
   "unfortunately.tooltip.read_fortune": "%s to read.",
+
+  "item.unfortunately.fortune_soap": "Fortune Soap",
+  "unfortunately.tooltip.fortune_soap": "Debug item. Clears pending fortunes.",
+  "unfortunately.fortune_soap.done": "Removed %s fortunes.",
   
   "unfortunately.quality.debug": "DEBUG: quality - %s",
   
@@ -20,7 +24,8 @@
   "unfortunately.quality.amazing": "Amazing",
 
   "unfortunately.timespan.debug": "DEBUG: timespan - %s",
-  
+
+  "unfortunately.timespan.immediately": "Immediately",
   "unfortunately.timespan.shortly": "Shortly",
   "unfortunately.timespan.near_future": "Near Future",
   "unfortunately.timespan.far_future": "Far Future",
@@ -30,15 +35,20 @@
   
   "unfortunately.command.clear.success": "Removed %s pending fortune(s) from %s player(s)",
 
-  "unfortunately.flavor.base": "%s, %s",
+  "unfortunately.flavor.base": "%s, %s.",
+
+  "unfortunately.flavor.timespan.immediately.0": "Immediately",
+  "unfortunately.flavor.timespan.immediately.1": "Now",
+  "unfortunately.flavor.timespan.immediately.2": "Very soon",
   
   "unfortunately.flavor.timespan.shortly.0": "Very shortly",
-  "unfortunately.flavor.timespan.shortly.1": "Very soon",
-  "unfortunately.flavor.timespan.shortly.2": "Today",
-  "unfortunately.flavor.timespan.shortly.3": "After you read this",
+  "unfortunately.flavor.timespan.shortly.1": "Soon",
+  "unfortunately.flavor.timespan.shortly.3": "Some time today",
+  "unfortunately.flavor.timespan.shortly.4": "Today",
+  "unfortunately.flavor.timespan.shortly.5": "After you read this",
   
   "unfortunately.flavor.timespan.near_future.0": "In the near future",
-  "unfortunately.flavor.timespan.near_future.1": "Soon",
+  "unfortunately.flavor.timespan.near_future.1": "Somewhat soon",
   "unfortunately.flavor.timespan.near_future.2": "Tomorrow",
   
   "unfortunately.flavor.timespan.far_future.0": "In the far future",
@@ -48,14 +58,14 @@
   "unfortunately.flavor.timespan.distant_future.1": "Eventually",
   "unfortunately.flavor.timespan.distant_future.2": "After you forget this message",
   
-  "unfortunately.flavor.fortune.dummy": "nothing out of the ordinary shall happen",
+  "unfortunately.flavor.fortune.dummy": "nothing out of the ordinary will happen",
   
-  "unfortunately.flavor.fortune.wither.0": "a terrible illness shall come over you",
-  "unfortunately.flavor.fortune.wither.1": "a terrible sickness shall come over you",
-  "unfortunately.flavor.fortune.wither.2": "a terrible illness shall befall you",
-  "unfortunately.flavor.fortune.wither.3": "a terrible sickness shall befall you",
+  "unfortunately.flavor.fortune.wither.0": "a terrible illness will come over you",
+  "unfortunately.flavor.fortune.wither.1": "a terrible sickness will come over you",
+  "unfortunately.flavor.fortune.wither.2": "a terrible illness will befall you",
+  "unfortunately.flavor.fortune.wither.3": "a terrible sickness will befall you",
   
-  "unfortunately.flavor.fortune.slowness.0": "a lethargy shall come over you",
+  "unfortunately.flavor.fortune.slowness.0": "a lethargy will come over you",
   "unfortunately.flavor.fortune.slowness.1": "you will feel inexplicably groggy",
   
   "unfortunately.flavor.fortune.hunger.0": "you will feel ravenously hungry",
@@ -63,20 +73,20 @@
   
   "unfortunately.flavor.fortune.regeneration.0": "you will begin to feel rejuvenated",
   "unfortunately.flavor.fortune.regeneration.1": "you will feel remarkably healthy",
-  "unfortunately.flavor.fortune.regeneration.2": "small injuries shall heal remarkably quickly",
+  "unfortunately.flavor.fortune.regeneration.2": "small injuries will heal remarkably quickly",
   
-  "unfortunately.flavor.fortune.haste.0": "a wave of determination shall wash over you",
+  "unfortunately.flavor.fortune.haste.0": "a wave of determination will wash over you",
   "unfortunately.flavor.fortune.haste.1": "you will desire to excavate the earth",
-  "unfortunately.flavor.fortune.haste.2": "your pick and shovel shall call to you",
+  "unfortunately.flavor.fortune.haste.2": "your pick and shovel will call to you",
   
-  "unfortunately.flavor.fortune.strength.0": "you shall thirst for blood",
+  "unfortunately.flavor.fortune.strength.0": "you will thirst for blood",
   "unfortunately.flavor.fortune.strength.1": "your sword and axe will call to you",
-  "unfortunately.flavor.fortune.strength.2": "you shall tap into a newfound strength",
+  "unfortunately.flavor.fortune.strength.2": "you will tap into a newfound strength",
   
-  "unfortunately.flavor.fortune.lucky_diamond.0": "your mining experiences shall be fruitful",
-  "unfortunately.flavor.fortune.lucky_diamond.1": "the underground shall bestow on you a gift",
+  "unfortunately.flavor.fortune.lucky_diamond.0": "your mining experiences will be fruitful",
+  "unfortunately.flavor.fortune.lucky_diamond.1": "the underground will bestow on you a gift",
   "unfortunately.flavor.fortune.lucky_diamond.2": "something shiny is in your future",
 
-  "unfortunately.flavor.fortune.lucky_nether_quartz.0": "your Nether mining experiences shall be fruitful",
-  "unfortunately.flavor.fortune.lucky_nether_quartz.1": "the underworld shall bestow on you a gift"
+  "unfortunately.flavor.fortune.lucky_nether_quartz.0": "your Nether mining experiences will be fruitful",
+  "unfortunately.flavor.fortune.lucky_nether_quartz.1": "the underworld will bestow on you a gift"
 }

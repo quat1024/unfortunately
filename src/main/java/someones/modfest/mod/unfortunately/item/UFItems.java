@@ -16,6 +16,8 @@ public class UFItems {
 	public static BlockItem CRYSTAL_BALL;
 	public static FortuneTicketItem UNREAD_FORTUNE;
 	
+	public static Item FORTUNE_SOAP;
+	
 	public static void onInitialize() {
 		CRYSTAL_BALL = Registry.register(Registry.ITEM, new Identifier(Unfortunately.MODID, "crystal_ball"), new BlockItem(
 			UFBlocks.CRYSTAL_BALL,
@@ -23,8 +25,11 @@ public class UFItems {
 		));
 		
 		UNREAD_FORTUNE = Registry.register(Registry.ITEM, new Identifier(Unfortunately.MODID, "unread_fortune"), new FortuneTicketItem(
-			//no itemgroup specified - that's intentional, it uses more complex logic below
-			new Item.Settings().rarity(Rarity.UNCOMMON)
+			new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)
+		));
+		
+		FORTUNE_SOAP = Registry.register(Registry.ITEM, new Identifier(Unfortunately.MODID, "fortune_soap"), new FortuneSoapItem(
+			new Item.Settings().group(GROUP).rarity(Rarity.EPIC).maxCount(1)
 		));
 	}
 	
@@ -36,6 +41,8 @@ public class UFItems {
 			for (FortuneQuality quality : FortuneQuality.values()) {
 				list.add(UNREAD_FORTUNE.stackWithBaseQuality(quality));
 			}
+			
+			list.add(new ItemStack(FORTUNE_SOAP));
 		})
 		.build();
 }

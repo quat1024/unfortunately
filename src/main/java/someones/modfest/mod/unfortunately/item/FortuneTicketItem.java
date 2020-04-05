@@ -10,7 +10,6 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -64,12 +63,12 @@ public class FortuneTicketItem extends Item {
 		
 		PlayerExt.addFortune(user, type, quality, timespan.pickTick(random));
 		
-		stack.decrement(1); //TODO why is this not working? i still have the item after i click with it
+		stack.decrement(1); //TODO why doesnt this work in creative lol
 		
-		//GUI stuff todo move this somewhere else maybe
+		//GUI opening stuff todo move this somewhere else maybe
 		
 		UFNetServer.openResultScreen(user, new TranslatableText("unfortunately.flavor.base",
-			timespan.pickFlavorText(random),
+			timespan.pickFlavorText(random).styled(s -> s.setBold(true)),
 			type.pickFlavorText(random)
 		));
 		
@@ -87,11 +86,11 @@ public class FortuneTicketItem extends Item {
 			)
 		);
 		
-		if(context.isAdvanced()) {
+		/*if(context.isAdvanced()) {
 			Text ayy = new TranslatableText("unfortunately.quality.debug", getBaseQuality(stack).toText());
 			ayy.getStyle().setColor(Formatting.RED);
 			tooltip.add(ayy);
-		}
+		}*/
 	}
 	
 	public ItemStack stackWithBaseQuality(FortuneQuality quality) {

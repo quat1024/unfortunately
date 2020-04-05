@@ -8,7 +8,8 @@ import java.util.Locale;
 import java.util.Random;
 
 public enum Timespan {
-	SHORTLY       (24000 / 4, 24000    , 4),
+	IMMEDIATELY   (1        , 1200     , 3),
+	SHORTLY       (24000 / 4, 24000    , 5),
 	NEAR_FUTURE   (24000    , 24000 * 2, 3),
 	FAR_FUTURE    (24000 * 2, 24000 * 4, 2),
 	DISTANT_FUTURE(24000 * 4, 24000 * 8, 3),
@@ -29,10 +30,10 @@ public enum Timespan {
 	}
 	
 	public static Timespan pick(Random random) {
-		for(Timespan value : values()) {
-			if(random.nextBoolean()) return value;
-		}
-		
+		if(random.nextInt(10) == 0) return IMMEDIATELY;
+		if(random.nextBoolean()) return SHORTLY;
+		if(random.nextBoolean()) return NEAR_FUTURE;
+		if(random.nextBoolean()) return FAR_FUTURE;
 		return DISTANT_FUTURE;
 	}
 	
@@ -42,10 +43,11 @@ public enum Timespan {
 	
 	public static Timespan byId(int id) {
 		switch(id) {
-			case 0: default: return SHORTLY;
-			case 1: return NEAR_FUTURE;
-			case 2: return FAR_FUTURE;
-			case 3: return DISTANT_FUTURE;
+			case 0: default: return IMMEDIATELY;
+			case 1: return SHORTLY;
+			case 2: return NEAR_FUTURE;
+			case 3: return FAR_FUTURE;
+			case 4: return DISTANT_FUTURE;
 		}
 	}
 	

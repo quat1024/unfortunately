@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "unfortunately:item/book_recolor_paper",
+    "layer1": "unfortunately:item/book_recolor_cover"
+  }
+}

@@ -3,6 +3,7 @@ package someones.modfest.mod.unfortunately.fortune;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.util.Identifier;
+import someones.modfest.mod.unfortunately.junk.TimeHelper;
 
 import java.util.Objects;
 
@@ -35,7 +36,7 @@ public class Fortune<T extends FortuneType> implements Comparable<Fortune<?>> {
 	public void tick(PlayerEntity player) {
 		if(status == Status.FINISHED) return;
 		
-		long now = player.world.getTimeOfDay();
+		long now = TimeHelper.getTime(player.world);
 		
 		if(status == Status.PENDING) {
 			if(now >= activationTick) {
