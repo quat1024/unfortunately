@@ -5,17 +5,21 @@
   "name": "Unfortunately",
   "description": "Fortunes and curses.",
   "authors": [
-    "It's a Mystery"
+    "quaternary"
   ],
+  "contact": {
+    "homepage": "https://highlysuspect.agency",
+    "sources": "https://github.com/quat1024/unfortunately"
+  },
   "license": "LGPL-3.0-or-later",
   "icon": "assets/unfortunately/icon.png",
   "environment": "*",
   "entrypoints": {
     "main": [
-      "someones.modfest.mod.unfortunately.Unfortunately"
+      "agency.highlysuspect.unfortunately.Unfortunately"
     ],
     "client": [
-      "someones.modfest.mod.unfortunately.UnfortunatelyClient"
+      "agency.highlysuspect.unfortunately.UnfortunatelyClient"
     ]
   },
   "mixins": [

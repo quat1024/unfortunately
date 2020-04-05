@@ -1,6 +1,6 @@
 {
   "required": true,
-  "package": "someones.modfest.mod.unfortunately.mixin",
+  "package": "agency.highlysuspect.unfortunately.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "PlayerEntityMixin",
