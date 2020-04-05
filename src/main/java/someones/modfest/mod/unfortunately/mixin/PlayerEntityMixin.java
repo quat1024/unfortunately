@@ -33,10 +33,14 @@ public class PlayerEntityMixin implements PlayerExt {
 		if(((PlayerEntity) (Object) this).world.isClient) return;
 		
 		for (Fortune<?> fortune : fortunes) {
-			fortune.tick((PlayerEntity) (Object) this);
+			try {
+				fortune.tick((PlayerEntity) (Object) this);
+			} catch(Exception boyIHopeTheModfestServerDoesntCrash) {
+				if(fortune != null) fortune.setFinished();
+			}
 		}
 		
-		fortunes.removeIf(f -> f.getStatus() == Fortune.Status.FINISHED);
+		fortunes.removeIf(Fortune::isFinished);
 	}
 	
 	@Inject(

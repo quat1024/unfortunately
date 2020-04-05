@@ -3,10 +3,11 @@
   "package": "someones.modfest.mod.unfortunately.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "VillagerProfessionMixin",
-    "PointOfInterestTypeMixin",
     "PlayerEntityMixin",
-    "ServerPlayerInteractionManagerMixin"
+    "PointOfInterestTypeMixin",
+    "ServerPlayerEntityMixin",
+    "ServerPlayerInteractionManagerMixin",
+    "VillagerProfessionMixin"
   ],
   "client": [
   ],

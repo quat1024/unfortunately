@@ -26,7 +26,7 @@ public class ServerPlayerInteractionManagerMixin {
 			value = "INVOKE",
 			target = "Lnet/minecraft/block/Block;onBroken(Lnet/minecraft/world/IWorld;Lnet/minecraft/util/math/BlockPos;Lnet/minecraft/block/BlockState;)V"
 		),
-		locals = LocalCapture.CAPTURE_FAILHARD
+		locals = LocalCapture.CAPTURE_FAILSOFT
 	)
 	private void whenBreakingBlock(BlockPos pos, CallbackInfoReturnable<Boolean> ci, BlockState brokenState, BlockEntity notfunny, Block didnt, boolean laugh) {
 		LuckyMiningFortuneHandler.whenSomeoneBreaksABlock(world, player, brokenState, pos);

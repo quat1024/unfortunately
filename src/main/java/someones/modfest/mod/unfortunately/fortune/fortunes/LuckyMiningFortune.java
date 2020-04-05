@@ -8,6 +8,7 @@ import net.minecraft.world.World;
 import someones.modfest.mod.unfortunately.fortune.Fortune;
 import someones.modfest.mod.unfortunately.fortune.FortuneType;
 import someones.modfest.mod.unfortunately.fortune.QualityRange;
+import someones.modfest.mod.unfortunately.junk.RandomHelper;
 
 import java.util.Random;
 import java.util.function.Function;
@@ -36,7 +37,7 @@ public class LuckyMiningFortune extends FortuneType<LuckyMiningFortune> {
 	
 	@Override
 	public void onAdded(PlayerEntity player, Fortune<LuckyMiningFortune> fortune) {
-		fortune.getCustomData().putInt("uses", player.world.random.nextInt(countHigh - countLow) + countLow);
+		fortune.getCustomData().putInt("uses", RandomHelper.randomRangeInclusive(player.world.random, countLow, countHigh));
 	}
 	
 	public int getUses(Fortune<LuckyMiningFortune> fortune) {

@@ -3,6 +3,8 @@ package someones.modfest.mod.unfortunately.fortune.fortunes;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
@@ -13,6 +15,7 @@ import someones.modfest.mod.unfortunately.fortune.FortuneRegistry;
 import someones.modfest.mod.unfortunately.fortune.FortuneType;
 import someones.modfest.mod.unfortunately.fortune.QualityRange;
 import someones.modfest.mod.unfortunately.junk.UFBlockTags;
+import someones.modfest.mod.unfortunately.junk.UFItemTags;
 
 import java.util.Random;
 import java.util.function.Function;
@@ -24,12 +27,16 @@ public class UFFortunes {
 	public static FortuneType<PotionFortune> SLOWNESS;
 	public static FortuneType<PotionFortune> HUNGER;
 	
+	public static FortuneType<ChestGiftFortune> CHEST_JUNK;
+	
 	public static FortuneType<PotionFortune> REGENERATION;
 	public static FortuneType<PotionFortune> HASTE;
 	public static FortuneType<PotionFortune> STRENGTH;
 	
-	public static FortuneType<LuckyMiningFortune> LUCKY_DIAMOND;
-	public static FortuneType<LuckyMiningFortune> LUCKY_NETHER_QUARTZ;
+	public static FortuneType<LuckyMiningFortune> LUCKY_MINING_DIAMOND;
+	public static FortuneType<LuckyMiningFortune> LUCKY_MINING_NETHER_QUARTZ;
+	
+	public static FortuneType<ChestGiftFortune> CHEST_DIAMOND;
 	
 	public static void onInitialize() {
 		DUMMY = reg("dummy_fortune", new DummyFortune());
@@ -58,6 +65,13 @@ public class UFFortunes {
 				int amplifier = -q.getId() - 1;
 				return new StatusEffectInstance(StatusEffects.HUNGER, duration, amplifier);
 			}
+		));
+		
+		CHEST_JUNK = reg("chest_junk", new ChestGiftFortune(
+			randomFlavor("unfortunately.flavor.fortune.chest_junk", 2),
+			QualityRange.inclusive(FortuneQuality.POOR, FortuneQuality.NEUTRAL),
+			random -> new ItemStack(UFItemTags.GARBAGE.getRandom(random), random.nextInt(5) + 1),
+			random -> random.nextInt(5) + 10
 		));
 		
 		REGENERATION = reg("regeneration", new PotionFortune(
@@ -90,8 +104,8 @@ public class UFFortunes {
 			}
 		));
 		
-		LUCKY_DIAMOND = reg("lucky_diamond", new LuckyMiningFortune(
-			randomFlavor("unfortunately.flavor.fortune.lucky_diamond", 3),
+		LUCKY_MINING_DIAMOND = reg("lucky_mining_diamond", new LuckyMiningFortune(
+			randomFlavor("unfortunately.flavor.fortune.lucky_mining_diamond", 3),
 			QualityRange.inclusive(FortuneQuality.GREAT, FortuneQuality.AMAZING),
 			(world, pos, state) -> world.getDimension().getType() == DimensionType.OVERWORLD &&
 				(state.matches(UFBlockTags.NATURAL_STONES) || state.getBlock().equals(Blocks.DIAMOND_ORE)) &&
@@ -100,13 +114,20 @@ public class UFFortunes {
 			4, 8
 		));
 		
-		LUCKY_NETHER_QUARTZ = reg("lucky_nether_quartz", new LuckyMiningFortune(
-			randomFlavor("unfortunately.flavor.fortune.lucky_nether_quartz", 2),
+		LUCKY_MINING_NETHER_QUARTZ = reg("lucky_mining_nether_quartz", new LuckyMiningFortune(
+			randomFlavor("unfortunately.flavor.fortune.lucky_mining_nether_quartz", 2),
 			QualityRange.inclusive(FortuneQuality.GOOD, FortuneQuality.AMAZING),
 			(world, pos, state) -> world.getDimension().getType() == DimensionType.THE_NETHER &&
 				(state.matches(UFBlockTags.NETHER_STONES) || state.getBlock().equals(Blocks.NETHER_QUARTZ_ORE)),
 			Blocks.NETHER_QUARTZ_ORE.getDefaultState(),
 			15, 40
+		));
+		
+		CHEST_DIAMOND = reg("chest_diamond", new ChestGiftFortune(
+			randomFlavor("unfortunately.flavor.fortune.chest_diamond", 1),
+			QualityRange.inclusive(FortuneQuality.GREAT, FortuneQuality.AMAZING),
+			random -> new ItemStack(Items.DIAMOND, random.nextInt(3) + 1),
+			random -> random.nextBoolean() ? 2 : 1
 		));
 	}
 	

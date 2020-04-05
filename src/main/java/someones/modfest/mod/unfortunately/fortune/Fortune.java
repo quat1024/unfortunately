@@ -60,6 +60,10 @@ public class Fortune<T extends FortuneType> implements Comparable<Fortune<?>> {
 		return status;
 	}
 	
+	public boolean isFinished() {
+		return status == Status.FINISHED;
+	}
+	
 	public void setFinished() {
 		status = Status.FINISHED;
 	}

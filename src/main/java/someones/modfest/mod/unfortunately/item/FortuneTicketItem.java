@@ -54,7 +54,7 @@ public class FortuneTicketItem extends Item {
 		
 		//Poke the quality around a little bit, so it's not entirely predictable.
 		int lol = 0;
-		while (random.nextBoolean() && lol++ < 25) {
+		while (random.nextInt(10) <= 7 && lol++ < 25) {
 			quality = quality.perturb(random);
 		}
 		

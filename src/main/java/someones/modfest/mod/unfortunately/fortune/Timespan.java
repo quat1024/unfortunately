@@ -8,11 +8,11 @@ import java.util.Locale;
 import java.util.Random;
 
 public enum Timespan {
-	IMMEDIATELY   (1        , 1200     , 3),
-	SHORTLY       (24000 / 4, 24000    , 5),
-	NEAR_FUTURE   (24000    , 24000 * 2, 3),
-	FAR_FUTURE    (24000 * 2, 24000 * 4, 2),
-	DISTANT_FUTURE(24000 * 4, 24000 * 8, 3),
+	IMMEDIATELY   (1        , 100      , 3),
+	SHORTLY       (24000 / 4, 24000 / 2, 5),
+	NEAR_FUTURE   (24000 / 2, 24000    , 3),
+	FAR_FUTURE    (24000    , 24000 * 2, 2),
+	DISTANT_FUTURE(24000 * 2, 24000 * 4, 3),
 	;
 	
 	Timespan(int ticksStart, int ticksEnd, int flavorTextCount) {

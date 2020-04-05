@@ -15,6 +15,7 @@ import net.minecraft.village.VillagerProfession;
 import someones.modfest.mod.unfortunately.Unfortunately;
 import someones.modfest.mod.unfortunately.fortune.FortuneQuality;
 import someones.modfest.mod.unfortunately.item.UFItems;
+import someones.modfest.mod.unfortunately.junk.RandomHelper;
 import someones.modfest.mod.unfortunately.mixin.VillagerProfessionMixin;
 
 import java.util.Random;
@@ -94,7 +95,8 @@ public class UFVillagerProfessions {
 		@Override
 		public TradeOffer create(Entity entity, Random random) {
 			ItemStack buyy = buy.copy();
-			buyy.setCount(random.nextInt(buyCountMax - buyCountMin) + buyCountMin);
+			
+			buyy.setCount(RandomHelper.randomRangeInclusive(random, buyCountMin, buyCountMax));
 			
 			ItemStack sell = UFItems.UNREAD_FORTUNE.stackWithBaseQuality(baseQuality);
 			if(random.nextInt(10) == 0) sell.setCount(2);

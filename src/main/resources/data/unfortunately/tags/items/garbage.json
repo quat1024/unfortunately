@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:rotten_flesh",
+    "minecraft:brick",
+    "minecraft:dirt",
+    "minecraft:lily_pad",
+    "minecraft:fern",
+    "minecraft:dead_bush",
+    "minecraft:wheat_seeds",
+    "minecraft:poisonous_potato"
+  ]
+}

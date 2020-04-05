@@ -4,14 +4,20 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EntityContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.text.Text;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import someones.modfest.mod.unfortunately.Unfortunately;
 
+import java.util.List;
 import java.util.Random;
 
 public class CrystalBallBlock extends Block {
@@ -38,7 +44,7 @@ public class CrystalBallBlock extends Block {
 	@Override
 	@Environment(EnvType.CLIENT)
 	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-		if(random.nextInt(5) == 0) {
+		if(random.nextInt(2) == 0) {
 			world.addParticle(
 				ParticleTypes.BUBBLE_POP,
 				//position
@@ -51,5 +57,11 @@ public class CrystalBallBlock extends Block {
 				0
 			);
 		}
+	}
+	
+	@Override
+	@Environment(EnvType.CLIENT)
+	public void buildTooltip(ItemStack stack, BlockView view, List<Text> tooltip, TooltipContext options) {
+		tooltip.add(new TranslatableText(Unfortunately.MODID + ".tooltip.crystal_ball"));
 	}
 }
