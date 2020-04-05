@@ -8,7 +8,6 @@ import net.minecraft.client.options.GameOptions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Formatting;
@@ -16,9 +15,12 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import someones.modfest.mod.unfortunately.Unfortunately;
-import someones.modfest.mod.unfortunately.fortune.*;
-import someones.modfest.mod.unfortunately.net.UFNetServer;
+import someones.modfest.mod.unfortunately.fortune.FortuneQuality;
+import someones.modfest.mod.unfortunately.fortune.FortuneRegistry;
+import someones.modfest.mod.unfortunately.fortune.FortuneType;
+import someones.modfest.mod.unfortunately.fortune.Timespan;
 import someones.modfest.mod.unfortunately.junk.PlayerExt;
+import someones.modfest.mod.unfortunately.net.UFNetServer;
 
 import java.util.List;
 import java.util.Random;
@@ -51,25 +53,27 @@ public class FortuneTicketItem extends Item {
 		
 		Random random = world.random;
 		
-		if(random.nextBoolean()) {
-			//Poke the quality around a little bit, so it's not entirely predictable.
-			int lol = 0;
-			while (random.nextBoolean() && lol++ < 25) {
-				quality = quality.perturb(random);
-			}
+		//Poke the quality around a little bit, so it's not entirely predictable.
+		int lol = 0;
+		while (random.nextBoolean() && lol++ < 25) {
+			quality = quality.perturb(random);
 		}
 		
-		FortuneType type = FortuneRegistry.pick(random, quality);
+		FortuneType<?> type = FortuneRegistry.pick(random, quality);
 		Timespan timespan = Timespan.pick(random);
 		
-		Fortune fortune = new Fortune(type, quality, world.getTimeOfDay() + timespan.pickTick(random));
-		((PlayerExt) user).getFortunes().add(fortune);
+		PlayerExt.addFortune(user, type, quality, timespan.pickTick(random));
 		
 		stack.decrement(1); //TODO why is this not working? i still have the item after i click with it
 		
-		UFNetServer.openResultScreen(user, new LiteralText("you got " + FortuneRegistry.FORTUNE_TYPES.getId(type) + " timespan: " + timespan.toString()));
+		//GUI stuff todo move this somewhere else maybe
 		
-		return TypedActionResult.consume(stack);
+		UFNetServer.openResultScreen(user, new TranslatableText("unfortunately.flavor.base",
+			timespan.pickFlavorText(random),
+			type.pickFlavorText(random)
+		));
+		
+		return TypedActionResult.success(stack);
 	}
 	
 	@Override

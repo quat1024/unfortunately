@@ -17,7 +17,7 @@ public class UFBlocks {
 			new CrystalBallBlock(
 				FabricBlockSettings.of(Material.GLASS, MaterialColor.PURPLE)
 					.breakByTool(FabricToolTags.PICKAXES, 2)
-					.sounds(BlockSoundGroup.LANTERN) //todo futz with this
+					.sounds(BlockSoundGroup.LANTERN)
 					.strength(3.5f, 0f)
 					.nonOpaque()
 					.build()

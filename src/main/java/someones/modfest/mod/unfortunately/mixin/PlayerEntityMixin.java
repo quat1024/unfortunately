@@ -17,11 +17,11 @@ import java.util.TreeSet;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin implements PlayerExt {
-	@Unique private final Set<Fortune> fortunes = new TreeSet<>();
+	@Unique private final Set<Fortune<?>> fortunes = new TreeSet<>();
 	@Unique private static final String FORTUNES_KEY = Unfortunately.MODID + "-fortunes";
 	
 	@Override
-	public Set<Fortune> getFortunes() {
+	public Set<Fortune<?>> getFortunes() {
 		return fortunes;
 	}
 	
@@ -32,7 +32,7 @@ public class PlayerEntityMixin implements PlayerExt {
 	private void tick(CallbackInfo ci) {
 		if(((PlayerEntity) (Object) this).world.isClient) return;
 		
-		for (Fortune fortune : fortunes) {
+		for (Fortune<?> fortune : fortunes) {
 			fortune.tick((PlayerEntity) (Object) this);
 		}
 		
@@ -59,7 +59,7 @@ public class PlayerEntityMixin implements PlayerExt {
 		ListTag fortunesTag = tag.getList(FORTUNES_KEY, 10);
 		fortunesTag.forEach(a -> {
 			if(!(a instanceof CompoundTag)) return;
-			Fortune fortune = Fortune.fromTag((CompoundTag) a);
+			Fortune<?> fortune = Fortune.fromTag((CompoundTag) a);
 			if(fortune != null) fortunes.add(fortune);
 		});
 	}

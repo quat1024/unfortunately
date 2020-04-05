@@ -37,27 +37,19 @@ public class UFVillagerProfessions {
 			copyToFastUtilMap(ImmutableMap.<Integer, TradeOffers.Factory[]>builder()
 				.put(1, new TradeOffers.Factory[]{
 					new ChoiceOffer(
-						new BuyFortuneOffer(FortuneQuality.POOR, 10, new ItemStack(Items.IRON_INGOT), 5, 12),
-						new BuyFortuneOffer(FortuneQuality.POOR, 10, new ItemStack(Items.COMPASS), 1, 2)
-					)
-				})
-				.put(2, new TradeOffers.Factory[]{
+						new BuyFortuneOffer(FortuneQuality.POOR, 1, new ItemStack(Items.IRON_INGOT), 5, 12),
+						new BuyFortuneOffer(FortuneQuality.POOR, 1, new ItemStack(Items.COMPASS), 1, 2)
+					),
 					new ChoiceOffer(
-						new BuyFortuneOffer(FortuneQuality.BAD, 30, new ItemStack(Items.GOLD_INGOT), 5, 12),
-						new BuyFortuneOffer(FortuneQuality.BAD, 30, new ItemStack(Items.GOLDEN_APPLE), 1, 2)
-					)
-				})
-				.put(3, new TradeOffers.Factory[]{
+						new BuyFortuneOffer(FortuneQuality.BAD, 1, new ItemStack(Items.GOLD_INGOT), 5, 12),
+						new BuyFortuneOffer(FortuneQuality.BAD, 1, new ItemStack(Items.GOLDEN_APPLE), 1, 2)
+					),
 					new ChoiceOffer(
-						new BuyFortuneOffer(FortuneQuality.NEUTRAL, 90, new ItemStack(Items.LAPIS_LAZULI), 5, 12),
-						new BuyFortuneOffer(FortuneQuality.NEUTRAL, 90, new ItemStack(Items.REDSTONE), 12, 20)
-					)
-				})
-				.put(4, new TradeOffers.Factory[]{
-					new BuyFortuneOffer(FortuneQuality.GOOD, 140, new ItemStack(Items.EMERALD), 6, 15)
-				})
-				.put(5, new TradeOffers.Factory[]{
-					new BuyFortuneOffer(FortuneQuality.GREAT, 180, new ItemStack(Items.DIAMOND), 4, 8)
+						new BuyFortuneOffer(FortuneQuality.NEUTRAL, 1, new ItemStack(Items.LAPIS_LAZULI), 5, 12),
+						new BuyFortuneOffer(FortuneQuality.NEUTRAL, 1, new ItemStack(Items.REDSTONE), 12, 20)
+					),
+					new BuyFortuneOffer(FortuneQuality.GOOD, 1, new ItemStack(Items.EMERALD), 6, 15),
+					new BuyFortuneOffer(FortuneQuality.GREAT, 1, new ItemStack(Items.DIAMOND), 4, 8)
 				})
 				.build()
 			)

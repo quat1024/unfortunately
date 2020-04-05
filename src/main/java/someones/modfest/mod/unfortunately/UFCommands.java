@@ -1,7 +1,6 @@
 package someones.modfest.mod.unfortunately;
 
 import com.mojang.brigadier.CommandDispatcher;
-import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.LongArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -74,16 +73,14 @@ public class UFCommands {
 	}
 	
 	public static void addFortunes(CommandContext<ServerCommandSource> ctx, Iterable<? extends Entity> entities, Identifier fortuneId, String qualityStr, long delay) {
-		FortuneType type = FortuneRegistry.get(fortuneId); //TODO handle error cases better (this silently switches to the dummy fortune)
+		FortuneType<?> type = FortuneRegistry.get(fortuneId); //TODO handle error cases better (this silently switches to the dummy fortune)
 		FortuneQuality quality = FortuneQuality.byString(qualityStr);
 		if(quality == null) return; //TODO send actual command feedback
-		
-		long now = ctx.getSource().getWorld().getTimeOfDay();
 		
 		int count = 0;
 		for (Entity entity : entities) {
 			if(entity instanceof PlayerEntity) {
-				((PlayerExt) entity).getFortunes().add(new Fortune(type, quality, now + delay));
+				PlayerExt.addFortune((PlayerEntity) entity, type, quality, delay);
 				count++;
 			}
 		}
@@ -97,7 +94,7 @@ public class UFCommands {
 		
 		for (Entity entity : entities) {
 			if(entity instanceof PlayerEntity) {
-				Set<Fortune> fortuneSet = ((PlayerExt) entity).getFortunes();
+				Set<Fortune<?>> fortuneSet = ((PlayerExt) entity).getFortunes();
 				int oldCount = fortuneSet.size();
 				
 				fortuneSet.removeIf(removeIf);

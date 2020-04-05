@@ -1,12 +1,18 @@
 package someones.modfest.mod.unfortunately.block;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.EntityContext;
+import net.minecraft.particle.ParticleTypes;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
+
+import java.util.Random;
 
 public class CrystalBallBlock extends Block {
 	public CrystalBallBlock(Settings settings) {
@@ -27,5 +33,23 @@ public class CrystalBallBlock extends Block {
 	@Override
 	public VoxelShape getRayTraceShape(BlockState state, BlockView view, BlockPos pos) {
 		return ALL;
+	}
+	
+	@Override
+	@Environment(EnvType.CLIENT)
+	public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
+		if(random.nextInt(5) == 0) {
+			world.addParticle(
+				ParticleTypes.BUBBLE_POP,
+				//position
+				pos.getX() + (random.nextDouble() * (6d / 16d)) + (4d / 16d),
+				pos.getY() + (14d / 16d),
+				pos.getZ() + (random.nextDouble() * (6d / 16d)) + (4d / 16d),
+				//velocity
+				0, 
+				0,
+				0
+			);
+		}
 	}
 }

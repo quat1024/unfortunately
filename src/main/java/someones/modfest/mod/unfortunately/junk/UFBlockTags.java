@@ -8,8 +8,10 @@ import someones.modfest.mod.unfortunately.Unfortunately;
 
 public class UFBlockTags {
 	public static Tag<Block> NATURAL_STONES;
+	public static Tag<Block> NETHER_STONES;
 	
 	public static void onInitialize() {
 		NATURAL_STONES = TagRegistry.block(new Identifier(Unfortunately.MODID, "natural_stones"));
+		NETHER_STONES = TagRegistry.block(new Identifier(Unfortunately.MODID, "nether_stones"));
 	}
 }
